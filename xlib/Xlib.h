@@ -68,6 +68,9 @@ typedef XID Drawable;
 typedef XID KeySym;
 typedef unsigned char KeyCode;
 
+typedef struct {
+} XPrivDisplay;
+
 #if defined(ISC) && defined(USE_XMBTOWC)
 #define wctomb(a,b)	_Xwctomb(a,b)
 #define mblen(a,b)	_Xmblen(a,b)

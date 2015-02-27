@@ -21,6 +21,8 @@ type
   Drawable* = XID
   KeySym* = XID
   KeyCode* = cuchar
+  XPrivDisplay* = object 
+  
 
 when defined(ISC) and defined(USE_XMBTOWC): 
   template wctomb*(a, b: expr): expr = 
@@ -392,7 +394,7 @@ type
 
 
 type 
-  funcs_12633951408816626425* = object 
+  funcs_1770328818753709264* = object 
     create_image*: proc (a2: ptr XDisplay; a3: ptr Visual; a4: cuint; a5: cint; 
                          a6: cint; a7: cstring; a8: cuint; a9: cuint; a10: cint; 
                          a11: cint): ptr XImage {.cdecl.}
@@ -421,7 +423,7 @@ type
     green_mask*: culong
     blue_mask*: culong
     obdata*: XPointer
-    f*: funcs_12633951408816626425
+    f*: funcs_1770328818753709264
 
 
 
@@ -663,7 +665,7 @@ type
 
 
 type 
-  INNER_C_UNION_8754277736859065139* = object  {.union.}
+  INNER_C_UNION_8753261598117319242* = object  {.union.}
     b*: array[20, char]
     s*: array[10, cshort]
     l*: array[5, clong]
@@ -907,7 +909,7 @@ type
     window*: Window
     message_type*: Atom
     format*: cint
-    data*: INNER_C_UNION_8754277736859065139
+    data*: INNER_C_UNION_8753261598117319242
 
   XMappingEvent* = object 
     `type`*: cint
@@ -1215,7 +1217,7 @@ const
   XIMVisibleToCenter* = (1 shl 10)
 
 type 
-  INNER_C_UNION_11713703284240265919* = object  {.union.}
+  INNER_C_UNION_14444843517302524627* = object  {.union.}
     multi_byte*: cstring
     wide_char*: cstring
 
@@ -1223,7 +1225,7 @@ type
     length*: cushort
     feedback*: ptr XIMFeedback
     encoding_is_wchar*: Bool
-    string*: INNER_C_UNION_11713703284240265919
+    string*: INNER_C_UNION_14444843517302524627
 
   XIMPreeditState* = culong
 
@@ -1254,7 +1256,7 @@ const
   XIMStringConversionWrapped* = (0x00000020)
 
 type 
-  INNER_C_UNION_1246344057362935208* = object  {.union.}
+  INNER_C_UNION_1247244991416548516* = object  {.union.}
     mbs*: cstring
     wcs*: cstring
 
@@ -1262,7 +1264,7 @@ type
     length*: cushort
     feedback*: ptr XIMStringConversionFeedback
     encoding_is_wchar*: Bool
-    string*: INNER_C_UNION_1246344057362935208
+    string*: INNER_C_UNION_1247244991416548516
 
   XIMStringConversionPosition* = cushort
   XIMStringConversionType* = cushort
@@ -1281,7 +1283,7 @@ const
   XIMStringConversionRetrieval* = (0x00000002)
 
 type 
-  INNER_C_UNION_5856194541208182151* = object  {.union.}
+  INNER_C_UNION_6064744601235878808* = object  {.union.}
     text*: ptr XIMText
     bitmap*: Pixmap
 
@@ -1313,7 +1315,7 @@ type
     XIMTextType, XIMBitmapType
   XIMStatusDrawCallbackStruct* = object 
     `type`*: XIMStatusDataType
-    data*: INNER_C_UNION_5856194541208182151
+    data*: INNER_C_UNION_6064744601235878808
 
   XIMHotKeyTrigger* = object 
     keysym*: KeySym
